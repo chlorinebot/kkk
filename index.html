@@ -632,9 +632,17 @@
             
             .main {
                 display: grid !important;
-                grid-template-columns: 32% 68% !important;
-                gap: 12px !important;
-                padding: 10px 15px 15px 15px !important;
+                grid-template-columns: 30% 70% !important;
+                gap: 10px !important;
+                padding: 8px 12px 12px 12px !important;
+            }
+            
+            .left-column {
+                page-break-before: avoid !important;
+            }
+            
+            .left-column .section:first-child {
+                page-break-inside: avoid !important;
             }
             
             .left-column, .right-column {
@@ -644,6 +652,17 @@
             .section {
                 page-break-inside: avoid;
                 margin-bottom: 20px !important;
+            }
+            
+            /* Skills section - start on page 1, allow continue to page 2 */
+            .left-column .section:nth-child(2) {
+                page-break-inside: auto !important;
+                page-break-before: avoid !important;
+            }
+            
+            .skill-category {
+                page-break-inside: avoid !important;
+                margin-bottom: 8px !important;
             }
             
             .profile-section {
@@ -749,9 +768,14 @@
             }
             
             .skill {
-                font-size: 9px !important;
-                padding: 2px 6px !important;
-                border-radius: 12px !important;
+                font-size: 8.5px !important;
+                padding: 2px 5px !important;
+                border-radius: 10px !important;
+                margin-bottom: 3px !important;
+            }
+            
+            .skills {
+                gap: 4px !important;
             }
             
             .project-tech-item {
@@ -852,7 +876,7 @@
                         Giới Thiệu
                     </h2>
                     <div class="section-content">
-                        <p>Có kinh nghiệm làm việc với các dự án lớn và nhỏ, theo dõi và kiểm thử dự án. Có kiến thức nền tảng vững chắc về .NET, SpringbootJava, NodeJS, React, SQL. Đặc biệt có kinh nghiệm phát triển Discord bot với C# .NET 10, Discord.Net, tích hợp Lavalink để xử lý audio streaming. Thành thạo kiến trúc event-driven, Dependency Injection và real-time messaging qua WebSocket. Đang tìm kiếm cơ hội làm việc để làm việc gắn bó và đóng góp vào các dự án.</p>
+                        <p>Có hơn 1 năm kinh nghiệm trong vai trò DevOps/Operation Support, vận hành và giám sát hệ thống server quy mô lớn cho nhà mạng viễn thông. Thành thạo triển khai và quản lý máy chủ Windows/Linux, cấu hình mạng LAN/WAN, TCP/IP, DNS/DHCP. Có kiến thức về CI/CD, containerization (Docker), monitoring và automation. Kinh nghiệm xử lý sự cố hệ thống, backup/restore và đảm bảo tính sẵn sàng cao (High Availability). Ngoài ra có nền tảng lập trình với .NET, NodeJS, React, SQL. Đang tìm kiếm cơ hội phát triển sự nghiệp trong lĩnh vực DevOps Engineer.</p>
                     </div>
                 </div>
                 
@@ -892,6 +916,7 @@
                                 <div class="skill">Cursor AI</div>
                                 <div class="skill">MCP (Model Context Protocol)</div>
                                 <div class="skill">OpenAI API</div>
+                                <div class="skill">Google Apps Script</div>
                                 <div class="skill">Dependency Injection</div>
                                 <div class="skill">Event-driven Architecture</div>
                                 <div class="skill">Async/Await</div>
@@ -911,14 +936,35 @@
                         </div>
                         
                         <div class="skill-category">
+                            <h3 class="skill-category-title">DevOps & System Admin</h3>
+                            <div class="skills">
+                                <div class="skill">Windows Server</div>
+                                <div class="skill">Linux (Ubuntu/CentOS)</div>
+                                <div class="skill">Active Directory</div>
+                                <div class="skill">Docker</div>
+                                <div class="skill">CI/CD</div>
+                                <div class="skill">Jenkins</div>
+                                <div class="skill">Mạng LAN/WAN</div>
+                                <div class="skill">TCP/IP</div>
+                                <div class="skill">Router/Switch</div>
+                                <div class="skill">DNS/DHCP</div>
+                                <div class="skill">Nginx/Apache</div>
+                                <div class="skill">Monitoring</div>
+                                <div class="skill">Bảo mật hệ thống</div>
+                                <div class="skill">Backup & Restore</div>
+                                <div class="skill">High Availability</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
                             <h3 class="skill-category-title">Kỹ Năng Mềm</h3>
                             <div class="skills">
                                 <div class="skill">Làm việc nhóm</div>
                                 <div class="skill">Học hỏi nhanh</div>
                                 <div class="skill">Giải quyết vấn đề</div>
                                 <div class="skill">Quản lý thời gian</div>
-                                <div class="skill">Phát triển Bot</div>
-                                <div class="skill">Xử lý Audio Streaming</div>
+                                <div class="skill">Giao tiếp khách hàng</div>
+                                <div class="skill">Xử lý tình huống</div>
                                 <div class="skill">Quản lý Server</div>
                             </div>
                         </div>
