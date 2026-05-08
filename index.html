@@ -1,82 +1,1049 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=7" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="Gửi lời yêu của đến crush!" />
-    <meta name="author" content="DONGNGO" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./assets/fonts/themify-icons.css" />
-    <link rel="stylesheet" href="./assets/styles.css" />
-    <link rel="stylesheet" href="./assets/responsive.css" />
-    <title>❤🧡💛💚Love BaoThuan💙💜🤎🖤</title>
-  </head>
-  <body>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Ứng Viên Lập Trình Viên</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0066ff;
+            --secondary: #e0e6ed;
+            --dark: #333;
+            --light: #f8f9fa;
+            --text: #495057;
+            --border: #e4e6eb;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --bg-color: #f0f2f5;
+            --card-bg: #fff;
+        }
+        
+        [data-theme="dark"] {
+            --primary: #4d9fff;
+            --secondary: #2a3a4a;
+            --dark: #e0e0e0;
+            --light: #1a1a2e;
+            --text: #b0b0b0;
+            --border: #3a4a5a;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            --bg-color: #0f0f1a;
+            --card-bg: #1a1a2e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+        
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        [data-theme="dark"] .theme-toggle {
+            background: #ffd700;
+            color: #333;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #0066ff, #0055dd);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 20px;
+            object-fit: cover;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 60px;
+        }
+        
+        .profile-section {
+            background: linear-gradient(135deg, #0066ff, #0055dd);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .profile-img-container {
+            flex-shrink: 0;
+        }
+        
+        .profile-img-new {
+            width: 100px;
+            height: 100px;
+            min-width: 100px;
+            min-height: 100px;
+            max-width: 100px;
+            max-height: 100px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.5);
+            object-fit: cover;
+            object-position: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            background-color: #fff;
+            display: block;
+            overflow: hidden;
+        }
+        
+        .profile-info {
+            color: white;
+            flex: 1;
+        }
+        
+        .profile-name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: white;
+        }
+        
+        .profile-title {
+            font-size: 16px;
+            font-weight: 500;
+            opacity: 0.9;
+            color: white;
+            margin-bottom: 12px;
+        }
+        
+        .profile-contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            font-size: 13px;
+        }
+        
+        .profile-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            opacity: 0.95;
+        }
+        
+        .profile-contact-item i {
+            font-size: 12px;
+            width: 14px;
+        }
+        
+        .name {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+        
+        .title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+        }
+        
+        .contact-item i {
+            font-size: 16px;
+        }
+        
+        .main {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            padding: 30px 40px 40px 40px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            background-color: var(--primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        
+        .section-content {
+            padding-left: 40px;
+        }
+        
+        .skill-category {
+            margin-bottom: 20px;
+        }
+        
+        .skill-category-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill {
+            background-color: var(--secondary);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--dark);
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+        
+        .skill:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 102, 255, 0.3);
+        }
+        
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .experience-item:last-child, .education-item:last-child, .project-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .experience-item::before, .education-item::before, .project-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary);
+            border-radius: 50%;
+        }
+        
+        .experience-title, .education-title, .project-title {
+            font-weight: 600;
+            font-size: 17px;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .experience-company, .education-institution, .project-description {
+            font-weight: 500;
+            font-size: 15px;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .experience-date, .education-date, .project-date {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+        
+        .experience-description, .education-description {
+            font-size: 15px;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .project-tech-item {
+            background-color: rgba(0, 102, 255, 0.1);
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .languages {
+            margin-bottom: 20px;
+        }
+        
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .language-name {
+            font-weight: 500;
+        }
+        
+        .language-level {
+            font-size: 14px;
+            color: #888;
+        }
+        
+        .progress-bar {
+            height: 6px;
+            background-color: var(--secondary);
+            border-radius: 3px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 3px;
+        }
+        
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .interest {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--light);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .interest:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .interest i {
+            color: var(--primary);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--light);
+            border-top: 1px solid var(--border);
+            font-size: 14px;
+            color: #888;
+        }
+        
+        .highlight {
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .main {
+                grid-template-columns: 1fr;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .main {
+                padding: 30px 20px;
+            }
+            
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .name {
+                font-size: 28px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+        }
+        
+        /* Animation */
+        .container {
+            animation: fadeIn 0.8s ease;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .skill, .project-tech-item, .interest {
+            animation: scaleIn 0.5s ease;
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        /* Print Styles for PDF Export */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0mm;
+            }
+            
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            html, body {
+                background-color: #fff !important;
+                margin: 0mm !important;
+                padding: 0mm !important;
+                width: 100% !important;
+                min-width: 100% !important;
+                height: auto !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                overflow: visible !important;
+            }
+            
+            .container {
+                margin: 0 !important;
+                padding: 0 !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                max-width: none !important;
+                min-width: 210mm !important;
+                width: 210mm !important;
+                left: 0 !important;
+                right: 0 !important;
+                animation: none !important;
+                position: relative !important;
+                transform: none !important;
+                zoom: 1 !important;
+            }
+            
+            .header {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                background: linear-gradient(135deg, #0066ff, #0055dd) !important;
+                color: white !important;
+                page-break-inside: avoid;
+            }
+            
+            .profile-img img {
+                display: block !important;
+                width: 150px !important;
+                height: 150px !important;
+                border-radius: 50% !important;
+                object-fit: cover !important;
+            }
+            
+            .header {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                background: linear-gradient(135deg, #0066ff, #0055dd) !important;
+                color: white !important;
+                page-break-inside: avoid;
+            }
+            
+            .header * {
+                color: white !important;
+            }
+            
+            .section-title i {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                background-color: #0066ff !important;
+                color: white !important;
+            }
+            
+            .skill {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                background-color: #e0e6ed !important;
+                border: 1px solid #e4e6eb !important;
+                page-break-inside: avoid;
+            }
+            
+            .skill:hover {
+                background-color: #e0e6ed !important;
+                color: #333 !important;
+                transform: none !important;
+                box-shadow: none !important;
+            }
+            
+            .project-tech-item {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                background-color: rgba(0, 102, 255, 0.1) !important;
+                color: #0066ff !important;
+                page-break-inside: avoid;
+            }
+            
+            .interest {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                background-color: #f8f9fa !important;
+                page-break-inside: avoid;
+            }
+            
+            .interest:hover {
+                background-color: #f8f9fa !important;
+                transform: none !important;
+            }
+            
+            .progress {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                background-color: #0066ff !important;
+            }
+            
+            .skill, .project-tech-item, .interest {
+                animation: none !important;
+            }
+            
+            .experience-item, .education-item, .project-item {
+                page-break-inside: avoid;
+            }
+            
+            .experience-item::before, .education-item::before, .project-item::before {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                background-color: #0066ff !important;
+            }
+            
+            .main {
+                display: grid !important;
+                grid-template-columns: 1fr 2fr !important;
+                gap: 30px !important;
+                padding: 20px 30px 30px 30px !important;
+            }
+            
+            .left-column, .right-column {
+                display: block !important;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+                margin-bottom: 20px !important;
+            }
+            
+            .profile-section {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                background: linear-gradient(135deg, #0066ff, #0055dd) !important;
+                page-break-inside: avoid;
+            }
+            
+            .profile-header {
+                display: flex !important;
+                align-items: center !important;
+            }
+            
+            .profile-name, .profile-title, .profile-info, .profile-contact, .profile-contact-item {
+                color: white !important;
+            }
+            
+            .profile-img-new {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                border: 4px solid rgba(255, 255, 255, 0.5) !important;
+                width: 100px !important;
+                height: 100px !important;
+                border-radius: 50% !important;
+                object-fit: cover !important;
+            }
+            
+            .footer {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                background-color: #f8f9fa !important;
+                page-break-inside: avoid;
+            }
+            
+            .theme-toggle {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
     <div class="container">
-      <div id="preloader">
-        <div class="spinner">
-          <div class="dashed-loading"></div>
-        </div>
-      </div>
-      <header class="header"></header>
-      <div class="content">
-        <div class="music-control">
-          <audio controls autoplay loop class="music">
-            <source src="./assets/musics/V1.wav" type="audio/wav" />
-          </audio>
-        </div>
-        <div class="answer-question">
-          <button class="btn btn--yes"></button>
-          <button class="btn btn--no"></button>
-        </div>
-      </div>
-      <!-- <footer class="footer">
-            <span class="footer-lisence">© 2021, Designed by
-                <a href="https://fb.com/100055545081553" class="footer-link">AndyNgoJs</a>
-            </span>
-        </footer> -->
-      <!-- Modal -->
-      <div class="modal">
-        <div class="modal__overlay"></div>
-        <div class="modal__body">
-          <div class="message-modal">
-            <div class="heading-name">
-              <h2 class="name"></h2>
+        <div class="main">
+            <div class="left-column">
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-info-circle"></i>
+                        Giới Thiệu
+                    </h2>
+                    <div class="section-content">
+                        <p>Có kinh nghiệm làm việc với các dự án lớn và nhỏ, theo dõi và kiểm thử dự án. Có kiến thức nền tảng vững chắc về .NET, NodeJS, React, SQL. Đặc biệt có kinh nghiệm phát triển Discord bot với C# .NET 10, Discord.Net, tích hợp Lavalink để xử lý audio streaming. Thành thạo kiến trúc event-driven, Dependency Injection và real-time messaging qua WebSocket. Đang tìm kiếm cơ hội làm việc để làm việc gắn bó và đóng góp vào các dự án.</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-laptop-code"></i>
+                        Kỹ Năng
+                    </h2>
+                    <div class="section-content">
+                        <div class="skill-category">
+                            <h3 class="skill-category-title">Ngôn Ngữ & Framework</h3>
+                            <div class="skills">
+                                <div class="skill">C#</div>
+                                <div class="skill">Java</div>
+                                <div class="skill">.NET</div>
+                                <div class="skill">Spring Boot</div>
+                                <div class="skill">ASP.NET Core</div>
+                                <div class="skill">Discord.Net</div>
+                                <div class="skill">Lavalink4NET</div>
+                                <div class="skill">HTML</div>
+                                <div class="skill">CSS</div>
+                                <div class="skill">JavaScript</div>
+                                <div class="skill">React</div>
+                                <div class="skill">TypeScript (cơ bản)</div>
+                                <div class="skill">Node.js</div>
+                                <div class="skill">Express.js</div>
+                                <div class="skill">mySQL</div>
+                                <div class="skill">PostgreSQL</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3 class="skill-category-title">Công Cụ & Thư Viện</h3>
+                            <div class="skills">
+                                <div class="skill">Git</div>
+                                <div class="skill">GitHub Copilot</div>
+                                <div class="skill">Cursor AI</div>
+                                <div class="skill">MCP (Model Context Protocol)</div>
+                                <div class="skill">OpenAI API</div>
+                                <div class="skill">Dependency Injection</div>
+                                <div class="skill">Event-driven Architecture</div>
+                                <div class="skill">Async/Await</div>
+                                <div class="skill">WebSocket</div>
+                                <div class="skill">Discord API</div>
+                                <div class="skill">Lavalink Server</div>
+                                <div class="skill">npm</div>
+                                <div class="skill">Webpack</div>
+                                <div class="skill">Responsive Design</div>
+                                <div class="skill">Emoji Picker</div>
+                                <div class="skill">Socket.IO</div>
+                                <div class="skill">RESTful API</div>
+                                <div class="skill">JWT</div>
+                                <div class="skill">Mongoose</div>
+                                <div class="skill">Boostrap</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3 class="skill-category-title">Kỹ Năng Mềm</h3>
+                            <div class="skills">
+                                <div class="skill">Làm việc nhóm</div>
+                                <div class="skill">Học hỏi nhanh</div>
+                                <div class="skill">Giải quyết vấn đề</div>
+                                <div class="skill">Quản lý thời gian</div>
+                                <div class="skill">Phát triển Bot</div>
+                                <div class="skill">Xử lý Audio Streaming</div>
+                                <div class="skill">Quản lý Server</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-language"></i>
+                        Ngôn Ngữ
+                    </h2>
+                    <div class="section-content">
+                        <div class="languages">
+                            <div class="language-item">
+                                <span class="language-name">Tiếng Việt</span>
+                                <span class="language-level">Bản ngữ</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                            <div class="language-item">
+                                <span class="language-name">Tiếng Anh</span>
+                                <span class="language-level">B1</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-heart"></i>
+                        Sở Thích
+                    </h2>
+                    <div class="section-content">
+                        <div class="interests">
+                            <div class="interest">
+                                <i class="fas fa-code"></i>
+                                <span>Lập trình</span>
+                            </div>
+                            <div class="interest">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>UI/UX Design</span>
+                            </div>
+                            <div class="interest">
+                                <i class="fas fa-book"></i>
+                                <span>Đọc sách</span>
+                            </div>
+                            <div class="interest">
+                                <i class="fas fa-gamepad"></i>
+                                <span>Game</span>
+                            </div>
+                            <div class="interest">
+    <i class="fas fa-film"></i>
+    <span>Xem phim</span>
+</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="heading-msg">
-              <p class="message"></p>
-            </div>
-            <div class="footer-modal">
-              <button class="btn btn-close">
-                <i class="btn-icon ti-close"></i>
-                Đóng
-              </button>
-            </div>
-          </div>
+            
+            <div class="right-column">
+                <div class="section profile-section">
+                    <div class="profile-header">
+                        <div class="profile-img-container">
+                            <img src="https://mayweddingstudio.vn/wp-content/uploads/hinh-anh-con-meo-ngau-cute-6.webp" alt="Kim Văn Tuấn" class="profile-img-new">
+                        </div>
+                        <div class="profile-info">
+                            <h1 class="profile-name">Kim Văn Tuấn</h1>
+                            <p class="profile-title">Vị trí ứng tuyển lập trình viên</p>
+                            <div class="profile-contact">
+                                <div class="profile-contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>kimdominic714@gmail.com</span>
+                                </div>
+                                <div class="profile-contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>0973336178 - 0798891903</span>
+                                </div>
+                                <div class="profile-contact-item">
+                                    <i class="fab fa-github"></i>
+                                    <a href="https://github.com/chlorinebot" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">github.com/chlorinebot</a>
+                                </div>
+                                <div class="profile-contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Thành phố Hồ Chí Minh, Việt Nam</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-project-diagram"></i>
+                        Dự Án Học Tập
+                    </h2>
+                    <div class="section-content">
+                        <div class="project-item">
+                            <h3 class="project-title">SnakeChat - Ứng Dụng Chat Thời Gian Thực</h3>
+                            <p class="project-description">Dự án cá nhân phát triển ứng dụng chat đa nền tảng</p>
+                            <p class="project-date">2025</p>
+                            <ul class="experience-description">
+                                <li>Phát triển giao diện người dùng với React và CSS thuần</li>
+                                <li>Xây dựng chức năng chat thời gian thực với emoji và hiển thị trạng thái tin nhắn</li>
+                                <li>Tích hợp tính năng responsive cho nhiều thiết bị</li>
+                                <li>Áp dụng lazy loading để tối ưu hiệu suất</li>
+                                <li>Xây dựng backend với Node.js và Express.js để xử lý yêu cầu người dùng</li>
+                                <li>Thiết kế và triển khai cơ sở dữ liệu mySQL để lưu trữ tin nhắn và thông tin người dùng</li>
+                                <li>Tích hợp Socket.IO để xử lý giao tiếp thời gian thực</li>
+                                <li>Triển khai hệ thống xác thực và phân quyền với JWT</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="project-tech-item">React</span>
+                                <span class="project-tech-item">CSS3</span>
+                                <span class="project-tech-item">JavaScript</span>
+                                <span class="project-tech-item">TypeScript</span>
+                                <span class="project-tech-item">Node.js</span>
+                                <span class="project-tech-item">Cloudinary</span>
+                                <span class="project-tech-item">Express.js</span>
+                                <span class="project-tech-item">bcrypt</span>
+                                <span class="project-tech-item">mySQL</span>
+                                <span class="project-tech-item">Socket.IO</span>
+                                <span class="project-tech-item">JWT</span>
+                                <span class="project-tech-item">RESTful API</span>
+                                <span class="project-tech-item">Emoji Picker</span>
+                                <span class="project-tech-item">Responsive Design</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <h3 class="project-title">Clara - Discord Music & Moderation Bot</h3>
+                            <p class="project-description">Bot Discord đa chức năng với tính năng phát nhạc và quản lý server</p>
+                            <p class="project-date">2026</p>
+                            <ul class="experience-description">
+                                <li>Xây dựng bot Discord sử dụng C# .NET 10 và Discord.Net framework</li>
+                                <li>Tích hợp Lavalink4NET để phát nhạc từ YouTube và các nguồn khác</li>
+                                <li>Thiết kế kiến trúc event-driven xử lý real-time messaging qua WebSocket</li>
+                                <li>Triển khai Dependency Injection container cho quản lý service</li>
+                                <li>Xây dựng hệ thống lệnh Slash Command và Prefix Command</li>
+                                <li>Phát triển chức năng quản lý server: kick, ban, warn, clear, slowmode</li>
+                                <li>Cấu hình Lavalink server để xử lý audio streaming</li>
+                                <li>Quản lý cấu hình qua file .env sử dụng DotNetEnv</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="project-tech-item">C#</span>
+                                <span class="project-tech-item">.NET 10</span>
+                                <span class="project-tech-item">Discord.Net</span>
+                                <span class="project-tech-item">Lavalink4NET</span>
+                                <span class="project-tech-item">WebSocket</span>
+                                <span class="project-tech-item">Dependency Injection</span>
+                                <span class="project-tech-item">Async/Await</span>
+                                <span class="project-tech-item">JSON</span>
+                                <span class="project-tech-item">Discord API</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <h3 class="project-title">Portfolio Cá Nhân</h3>
+                            <p class="project-description">Website portfolio cá nhân giới thiệu bản thân</p>
+                            <p class="project-date">2024</p>
+                            <ul class="experience-description">
+                                <li>Thiết kế và phát triển website portfolio với HTML, CSS và JavaScript</li>
+                                <li>Xây dựng giao diện responsive, thân thiện với người dùng</li>
+                                <li>Tối ưu hóa hiệu suất tải trang</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="project-tech-item">HTML5</span>
+                                <span class="project-tech-item">CSS3</span>
+                                <span class="project-tech-item">JavaScript</span>
+                                <span class="project-tech-item">Responsive Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-graduation-cap"></i>
+                        Học Vấn
+                    </h2>
+                    <div class="section-content">
+                        <div class="education-item">
+                            <h3 class="education-title">Cử nhân Công Nghệ Thông Tin</h3>
+                            <p class="education-institution">Trường Đại học Công nghệ và Quản lý Hữu Nghị</p>
+                            <p class="education-date">2021 - 31/05/2025</p>
+                            <p class="education-description">Chuyên ngành: Công nghệ thông tin<br>GPA: 3.0/4.0</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-certificate"></i>
+                        Chứng Chỉ & Khóa Học
+                    </h2>
+                    <div class="section-content">
+                        <div class="education-item">
+                            <h3 class="education-title">Chứng chỉ Tiếng Anh B1</h3>
+                            <p class="education-institution">Khung tham chiếu Châu Âu</p>
+                            <p class="education-date">2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+    <h2 class="section-title">
+        <i class="fas fa-briefcase"></i>
+        Kinh Nghiệm Làm Việc
+    </h2>
+    <div class="section-content">
+            <div class="experience-item">
+            <h3 class="experience-title">Operation Support Monitor</h3>
+            <div class="experience-company">Công ty Cổ phần Telsoft</div>
+            <div class="experience-date">07/2025 - 04/2026</div>
+            <ul class="experience-description">
+                <li>Hỗ trợ vận hành và giám sát hệ thống server quy mô lớn, cung cấp dịch vụ máy chủ lưu trữ cho nhà mạng viễn thông</li>
+                <li>Phối hợp với đội phát triển (dev) và kiểm thử (tester) để kiểm thử, cải thiện chức năng và đảm bảo chất lượng phần mềm quản lý SIM số, thuê bao điện thoại</li>
+                <li>Đảm nhiệm vai trò liên lạc giữa khách hàng và các đội dự án, hỗ trợ giao tiếp và xử lý yêu cầu từ phía khách hàng</li>
+                <li>Tích lũy kiến thức chuyên sâu về lĩnh vực viễn thông, các chức năng hệ thống chính và công cụ hỗ trợ khách hàng</li>
+            </ul>
         </div>
-      </div>
+        
+        <div class="experience-item">
+            <h3 class="experience-title">Web Developer Intern</h3>
+            <div class="experience-company">Công ty Cổ phần Phần mềm BRAVO</div>
+            <div class="experience-date">11/2024 - 01/2025</div>
+            <ul class="experience-description">
+                <li>Hỗ trợ team phát triển các tính năng mới cho website</li>
+                <li>Tham gia fix bug và cải thiện giao diện người dùng</li>
+                <li>Học hỏi và áp dụng các công nghệ mới trong phát triển web</li>
+            </ul>
+        </div>
     </div>
-    <script
-      type="text/javascript"
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-    ></script>
-    <script src="./CONFIG.js"></script>
-    <script src="./assets/js/main.js"></script>
-  </body>
-</html>
+</div>
+                
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-bullseye"></i>
+                        Mục Tiêu Nghề Nghiệp
+                    </h2>
+                    <div class="section-content">
+                        <p>Với nền tảng vững chắc về <strong>.NET, Node.js và React</strong> cùng kinh nghiệm thực tế tại Telsoft và BRAVO, tôi mong muốn phát triển sự nghiệp với vị trí <strong>Full-stack/Backend Developer</strong>. Tôi đặc biệt đam mê xây dựng các hệ thống scalable sử dụng kiến trúc event-driven, real-time communication (WebSocket/Socket.IO) và microservices.</p>
+                        <p style="margin-top: 10px;">Mục tiêu ngắn hạn là áp dụng kinh nghiệm vận hành hệ thống viễn thông quy mô lớn và phát triển bot Discord (C# .NET 10, Lavalink4NET) để đóng góp vào các dự án đòi hỏi xử lý data real-time và high-performance backend. Dài hạn, tôi hướng đến trở thành Technical Lead với khả năng thiết kế hệ thống end-to-end, từ database design, RESTful API đến deployment và monitoring.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2026 kimvantuan - Ứng viên lập trình viên</p>
+        </div>
+    </div>
+    <button class="theme-toggle" id="themeToggle" title="Chuyển đổi Dark/Light Mode">
+        <i class="fas fa-moon"></i>
+    </button>
+    
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+        
+        // Check saved theme preference
+        const savedTheme = localStorage.getItem('cv-theme');
+        if (savedTheme === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                body.removeAttribute('data-theme');
+                localStorage.setItem('cv-theme', 'light');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('cv-theme', 'dark');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
+    </script>
+</body>
+</html> 
